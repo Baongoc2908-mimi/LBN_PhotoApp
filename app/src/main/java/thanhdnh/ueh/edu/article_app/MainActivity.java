@@ -5,7 +5,6 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.GridView;
-
 import androidx.appcompat.app.AppCompatActivity;
 
 public class MainActivity extends AppCompatActivity {
@@ -14,7 +13,7 @@ public class MainActivity extends AppCompatActivity {
   private AdapterView.OnItemClickListener onitemclick = new AdapterView.OnItemClickListener() {
     @Override
     public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-      Intent intent = new Intent(getBaseContext(), ViewArticleActivity.class);
+      Intent intent = new Intent(getBaseContext(), ViewUserActivity.class);
       intent.putExtra("id", gridview.getAdapter().getItemId(position));
       startActivity(intent);
     }
@@ -27,8 +26,8 @@ public class MainActivity extends AppCompatActivity {
     getSupportActionBar().hide();
 
     gridview = findViewById(R.id.gridview);
-    new ArticleData(getBaseContext(), gridview).loadData("https://raw.githubusercontent.com/thanhdnh/json/main/products.json", this);
+    // Cập nhật URL dẫn đến file JSON người dùng
+    new UserData(getBaseContext(), gridview).loadData("https://raw.githubusercontent.com/Baongoc2908-mimi/user-data/main/users.json", this);
     gridview.setOnItemClickListener(onitemclick);
   }
-
 }

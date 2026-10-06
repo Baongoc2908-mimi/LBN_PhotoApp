@@ -3,7 +3,7 @@ package thanhdnh.ueh.edu.article_app;
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
-public class Article {
+public class User {
   @SerializedName("article_id")
   @Expose
   private int article_id;
@@ -20,7 +20,7 @@ public class Article {
   @Expose
   private String article_description;
 
-  public Article(int article_id, String article_title, String article_image, String article_description) {
+  public User(int article_id, String article_title, String article_image, String article_description) {
     this.article_id = article_id;
     this.article_title = article_title;
     this.article_image = article_image;

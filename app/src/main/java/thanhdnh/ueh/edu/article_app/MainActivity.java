@@ -14,7 +14,8 @@ public class MainActivity extends AppCompatActivity {
     @Override
     public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
       Intent intent = new Intent(getBaseContext(), ViewUserActivity.class);
-      intent.putExtra("id", gridview.getAdapter().getItemId(position));
+      // Ép kiểu (int) ở đây
+      intent.putExtra("id", (int) gridview.getAdapter().getItemId(position));
       startActivity(intent);
     }
   };
@@ -23,10 +24,12 @@ public class MainActivity extends AppCompatActivity {
   protected void onCreate(Bundle savedInstanceState) {
     super.onCreate(savedInstanceState);
     setContentView(R.layout.activity_main);
-    getSupportActionBar().hide();
+
+    if (getSupportActionBar() != null) {
+      getSupportActionBar().hide();
+    }
 
     gridview = findViewById(R.id.gridview);
-    // Cập nhật URL dẫn đến file JSON người dùng
     new UserData(getBaseContext(), gridview).loadData("https://raw.githubusercontent.com/Baongoc2908-mimi/user-data/main/users.json", this);
     gridview.setOnItemClickListener(onitemclick);
   }

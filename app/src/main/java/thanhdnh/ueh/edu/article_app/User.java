@@ -4,58 +4,71 @@ import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
 public class User {
-  @SerializedName("article_id")
+  @SerializedName("id")
   @Expose
-  private int article_id;
+  private int id;
 
-  @SerializedName("article_title")
+  @SerializedName("uname")
   @Expose
-  private String article_title;
+  private String uname;
 
-  @SerializedName("article_image")
+  @SerializedName("password")
   @Expose
-  private String article_image;
+  private String password;
 
-  @SerializedName("article_description")
+  @SerializedName("url_profile")
   @Expose
-  private String article_description;
+  private String url_profile;
 
-  public User(int article_id, String article_title, String article_image, String article_description) {
-    this.article_id = article_id;
-    this.article_title = article_title;
-    this.article_image = article_image;
-    this.article_description = article_description;
+  @SerializedName("short_bio")
+  @Expose
+  private String short_bio;
+
+  public User(int id, String uname, String password, String url_profile, String short_bio) {
+    this.id = id;
+    this.uname = uname;
+    this.password = password;
+    this.url_profile = url_profile;
+    this.short_bio = short_bio;
   }
 
-  public int getArticle_id() {
-    return article_id;
+  public int getId() {
+    return id;
   }
 
-  public void setArticle_id(int article_id) {
-    this.article_id = article_id;
+  public void setId(int id) {
+    this.id = id;
   }
 
-  public String getArticle_title() {
-    return article_title;
+  public String getUname() {
+    return uname;
   }
 
-  public void setArticle_title(String article_title) {
-    this.article_title = article_title;
+  public void setUname(String uname) {
+    this.uname = uname;
   }
 
-  public String getArticle_image() {
-    return article_image;
+  public String getPassword() {
+    return password;
   }
 
-  public void setArticle_image(String article_image) {
-    this.article_image = article_image;
+  public void setPassword(String password) {
+    this.password = password;
   }
 
-  public String getArticle_description() {
-    return article_description;
+  public String getUrl_profile() {
+    return url_profile;
   }
 
-  public void setArticle_description(String article_description) {
-    this.article_description = article_description;
+  public void setUrl_profile(String url_profile) {
+    this.url_profile = url_profile;
+  }
+
+  public String getShort_bio() {
+    return short_bio;
+  }
+
+  public void setShort_bio(String short_bio) {
+    this.short_bio = short_bio;
   }
 }
